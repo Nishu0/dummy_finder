@@ -1,0 +1,23 @@
+[project]
+name = "dummy-finder"
+version = "0.1.0"
+description = "multimodal search engine with gemini and chromaDB"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "chromadb>=0.5.0",
+  "google-genai>=0.8.0",
+  "pillow>=10.0.0",
+  "pypdf>=5.0.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+dummy-finder = "dummy_finder.cli:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["dummy_finder"]
