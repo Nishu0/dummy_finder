@@ -6,6 +6,41 @@ Supports images, PDFs, audio, video, and text files. Search in plain English. A 
 
 ---
 
+## how it works
+
+**embed**
+```
+file (image / pdf / audio / video / text)
+        │
+        ▼
+  Gemini Embedding 2
+        │
+        ▼
+  768-dim vector
+        │
+        ▼
+  ChromaDB  ──── stored locally on disk
+```
+
+**search**
+```
+"sunset at the beach"  (plain english query)
+        │
+        ▼
+  Gemini Embedding 2  (query mode)
+        │
+        ▼
+  768-dim query vector
+        │
+        ▼
+  ChromaDB cosine similarity search
+        │
+        ▼
+  top N results  ──── ranked by similarity score
+```
+
+---
+
 ## requirements
 
 - Python 3.10+
